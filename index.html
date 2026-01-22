@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="737c99c22d43c4054d18025fcd3d94cba97af862" content="737c99c22d43c4054d18025fcd3d94cba97af862" />
+  <title>𝙃𝙏 𝙄𝙊𝙎ᯓ୨ৎ</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://sf-static.upanhlaylink.com/img/image_2026011673a564000961f8cf3022beab02ffdc1e.jpg" type="image/jpeg">
+  <link rel="shortcut icon" href="https://sf-static.upanhlaylink.com/img/image_2026011673a564000961f8cf3022beab02ffdc1e.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="https://sf-static.upanhlaylink.com/img/image_2026011673a564000961f8cf3022beab02ffdc1e.jpg">
+  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+
+  <style>
+    /* ==== Reset & base ==== */
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%;font-family:'Segoe UI',sans-serif;color:#fff}
+    a{text-decoration:none}
+    img{display:block;max-width:100%}
+    body{
+        background: url('https://sf-static.upanhlaylink.com/img/image_20260103a2d9fe225d8e11bbc8bf95137c0ab786.jpg') no-repeat center center fixed;
+        background-size: cover;
+        overflow-x: hidden;
+        position: relative;
+        transition: background-image 0.5s ease;
+        min-height: 100vh;
+        height: 100%;
+    }
+    
+    /* Overlay tối */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+    body.loading{overflow:hidden}
+
+    /* ==== Modern Hamburger ==== */
+    .menu-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        z-index: 1100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .menu-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+    }
+
+    /* ==== Background Toggle Button ==== */
+    .theme-toggle {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        z-index: 1100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+    }
+
+    /* ==== Admin Login/Logout Button ==== */
+    .admin-toggle {
+        position: fixed;
+        top: 85px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        z-index: 1100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .admin-toggle:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+    }
+
+    /* ==== Logout Button (ẩn mặc định) ==== */
+    .logout-btn {
+        position: fixed;
+        top: 150px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background: rgba(231, 76, 60, 0.8);
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        z-index: 1100;
+        display: none; /* Ẩn mặc định */
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+    
+    .logout-btn.show {
+        display: flex; /* Hiện khi đã login */
+    }
+    
+    .logout-btn:hover {
+        background: rgba(192, 57, 43, 0.9);
+        transform: scale(1.05);
+    }
+
+    /* ==== Modern Mobile Menu ==== */
+    #mobileMenu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 85%;
+        height: 100%;
+        padding: 80px 30px 40px;
+        background: rgba(26, 26, 46, 0);
+        backdrop-filter: blur(5px);
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+        border-radius: 20px 0 0 20px;
+    }
+
+    #mobileMenu.open {
+        transform: translateX(0);
+    }
+
+    #mobileMenu .close-btn {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 45px;
+        height: 45px;
+        background: rgba(77, 171, 247, 0.1);
+        border: none;
+        border-radius: 12px;
+        font-size: 1.4rem;
+        color: #4dabf7;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    #mobileMenu .close-btn:hover {
+        background: rgba(77, 171, 247, 0.2);
+        transform: rotate(90deg);
+    }
+
+    #mobileMenu a {
+        display: block;
+        margin: 20px 0;
+        padding: 16px 20px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    #mobileMenu a:hover {
+        background: rgba(77, 171, 247, 0.2);
+        transform: translateX(10px);
+        color: #4dabf7;
+    }
+
+    /* ==== Profile ==== */
+    .profile{
+        padding-top: 80px;
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .avatar{
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        margin: 0 auto 20px;
+        object-fit: cover;
+    }
+    
+    .profile h2{
+        font-size: 18px;
+        color: #ccc;
+        margin-bottom: 5px;
+        font-weight: 400;
+    }
+    
+    .profile h1{
+        font-size: 32px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+    
+    .verify{
+        width: 30px;
+        margin-left: 8px;
+    }
+    
+    .typed-text{
+        font-size: 18px;
+        margin-top: 10px;
+        display: block;
+        min-height: 30px;
+    }
+    
+    .gradient-text{
+        background: linear-gradient(90deg, #6b6bf2, #a16bf2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+    }
+
+    /* ==== Social ==== */
+    .socials{
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+    
+    .socials .icon{
+        width: 56px;
+        height: 56px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+    
+    .socials .icon:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .socials .icon img{
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+    }
+
+    /* ==== Items Section ==== */
+    .section{
+        padding: 40px 0;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .section h2{
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #fff;
+    }
+
+    .items{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+    
+    .item{
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        backdrop-filter: blur(10px);
+    }
+    
+    .item:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        border-color: #4dabf7;
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .item .info{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex: 1;
+    }
+    
+    .item .info img{
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    
+    .item .meta .title{
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+    }
+    
+    .item .meta .subtitle{
+        font-size: 14px;
+        color: #ccc;
+        margin-top: 4px;
+    }
+    
+    /* ==== Item Actions Container ==== */
+    .item-actions {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+    
+    .action{
+        background: #4dabf7;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+    
+    .action:hover{
+        background: #3b99e8;
+        transform: scale(1.1);
+    }
+
+    /* ==== Admin Action Button (ẩn mặc định) ==== */
+    .admin-action {
+        background: #27ae60 !important;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: none; /* Ẩn mặc định */
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+    
+    .admin-action.show {
+        display: flex; /* Hiện khi login */
+    }
+    
+    .admin-action:hover{
+        background: #219653 !important;
+        transform: scale(1.1);
+    }
+
+    /* ==== Footer ==== */
+    .footer{
+        padding: 30px 0;
+        text-align: center;
+        font-size: 14px;
+        color: #ccc;
+        margin-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* ==== Intro Splash ==== */
+    #introSplash{
+        position: fixed;
+        inset: 0;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        animation: fadeOut 1s 2.3s forwards;
+    }
+    
+    .intro-content{
+        text-align: center;
+        color: white;
+    }
+    
+    .intro-avatar{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 0 20px white;
+        margin: 0 auto 20px;
+        animation: pop 0.6s ease-out;
+    }
+    
+    .intro-title{
+        font-size: 35px;
+        font-weight: 700;
+        text-shadow: 0 0 8px white;
+        animation: slide 0.6s 0.3s ease-out backwards;
+    }
+    
+    .intro-sub{
+        font-size: 20px;
+        margin-top: 10px;
+        opacity: 0.8;
+        animation: slide 0.6s 0.5s ease-out backwards;
+    }
+    
+    @keyframes fadeOut{
+        to{
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    
+    @keyframes pop{
+        0%{ transform: scale(0); }
+        80%{ transform: scale(1.1); }
+        100%{ transform: scale(1); }
+    }
+    
+    @keyframes slide{
+        from{
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+     /* ==== Music Controls ==== */
+    .music-controls{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.096);
+        padding: 12px;
+        border-radius: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
+    
+    .music-btn{
+        width: 45px;
+        height: 45px;
+        background: rgba(251, 251, 252, 0.089);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .music-btn:hover{
+        transform: scale(1.1);
+        background: rgba(243, 244, 245, 0.137);
+    }
+    
+    .select-btn{
+        background: rgba(156, 89, 182, 0.452) !important;
+    }
+    
+    .select-btn:hover{
+        background: rgba(141, 68, 173, 0.397) !important;
+    }
+
+
+    /* ==== Song List Panel ==== */
+    .song-list-panel{
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.089);
+        backdrop-filter: blur(2px);
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        z-index: 1001;
+        width: 250px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+    
+    .song-list-panel.show{
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+    
+    .song-list-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        font-weight: 600;
+        color: #fff;
+    }
+    
+    .close-list-btn{
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #ccc;
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+    
+    .song-list-content{
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    
+    .song-list-item{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 14px;
+        color: #fff;
+        margin-bottom: 5px;
+    }
+    
+    .song-list-item:hover{
+        background: rgba(77, 171, 247, 0.2);
+    }
+    
+    .song-list-item.active{
+        background: rgba(77, 171, 247, 0.3);
+        color: #4dabf7;
+    }
+
+    /* ==== Song Notification ==== */
+    .song-notification{
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100px);
+        background: rgba(0, 0, 0, 0.473);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 30px;
+        z-index: 1002;
+        backdrop-filter: blur(7px);
+        transition: all 0.5s ease;
+        opacity: 0;
+    }
+    
+    .song-notification.show{
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    
+    .notification-content{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    /* ==== Flower Effect ==== */
+    .flower{
+        position: fixed;
+        top: -50px;
+        font-size: 15px;
+        color: #ff6b6b;
+        z-index: 9999;
+        pointer-events: none;
+        animation: fall linear forwards;
+        user-select: none;
+    }
+    
+    @keyframes fall{
+        to{
+            transform: translateY(100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    .flower-toggle{
+        position: fixed;
+        bottom: 130px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: rgba(93, 175, 241, 0.418);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1000;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .flower-toggle:hover{
+        transform: scale(1.1);
+        background: rgba(59, 153, 232, 0.8);
+    }
+    
+    .flower-toggle.off{
+        background: rgba(204, 204, 204, 0.5);
+    }
+
+    /* ==== Interaction Notification ==== */
+    .interaction-notification{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 25px;
+        z-index: 1003;
+        backdrop-filter: blur(10px);
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .interaction-notification .notification-content{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    /* ==== Login Modal ==== */
+    .login-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 2001;
+        backdrop-filter: blur(10px);
+    }
+    
+    .login-modal.show {
+        display: flex;
+    }
+    
+    .login-container {
+        background: rgba(26, 26, 46, 0.95);
+        padding: 30px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+    
+    .login-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    
+    .login-header h2 {
+        color: #fff;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .login-header p {
+        color: #ccc;
+        font-size: 14px;
+    }
+    
+    .login-form input {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 16px;
+    }
+    
+    .login-form input:focus {
+        outline: none;
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .login-form button {
+        width: 100%;
+        padding: 12px;
+        background: #4dabf7;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .login-form button:hover {
+        background: #3b99e8;
+        transform: translateY(-2px);
+    }
+    
+    .login-error {
+        color: #e74c3c;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 10px;
+        display: none;
+    }
+
+    /* ==== Background Notification ==== */
+    .background-notification{
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100px);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        z-index: 1002;
+        backdrop-filter: blur(10px);
+        transition: all 0.5s ease;
+        opacity: 0;
+        font-size: 14px;
+    }
+    
+    .background-notification.show{
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    /* ==== Typed.js Cursor ==== */
+    .typed-cursor{
+        opacity: 1;
+        animation: typedjsBlink 0.7s infinite;
+        color: #fff;
+    }
+    
+    @keyframes typedjsBlink{
+        0%{ opacity: 1; }
+        50%{ opacity: 0; }
+        100%{ opacity: 1; }
+    }
+    
+    /* ==== THÊM PHẦN NÀY CHO iOS SCROLL ==== */
+    html {
+        height: 100%;
+        overflow-x: hidden;
+    }
+    body {
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+  </style>
+</head>
+
+<body>
+ <!-- Background Container -->
+  <div class="bg-container">
+    <div class="bg-image" id="bgImage"></div>
+  </div>
+  
+  <!-- Splash Intro -->
+  <div id="introSplash">
+    <div class="intro-content">
+      <img src="https://sf-static.upanhlaylink.com/img/image_2026011625f047f7cf5fda2c479c303f97320e0f.jpg" class="intro-avatar" alt="Avatar">
+      <h1 class="intro-title">𝙃𝙏 𝙄𝙊𝙎ᯓ୨ৎ</h1>
+      <p class="intro-sub">Loading Profile…</p>
+    </div>
+  </div>
+    
+  <!-- Menu & Theme Toggle -->
+  <button id="menuToggle" class="menu-btn"><i class="bi bi-list"></i></button>
+  <button id="themeToggle" class="theme-toggle"><i class="bi bi-image"></i></button>
+  <button id="adminToggle" class="admin-toggle"><i class="bi bi-person-fill"></i></button>
+  <button id="logoutBtn" class="logout-btn"><i class="bi bi-box-arrow-right"></i></button>
+
+  <!-- Mobile Menu -->
+  <nav id="mobileMenu">
+    <button class="close-btn"><i class="bi bi-x-lg"></i></button>
+    <a href="https://htios2590.vercel.app">Esign & Ksign</a>
+    <a href="https://htiosdev.vercel.app">Kho Hack iOS & ADR</a>
+    <a href="https://ipa-server-nu.vercel.app/">Kho iPA </a>
+    <a href="https://create-config-three.vercel.app/">Tạo Cấu Hình iOS</a>
+    <a href="https://tatsumaki-kohl.vercel.app/">Tatsumaki</a>
+  </nav>
+
+  <!-- ===== Profile ===== -->
+  <div class="profile">
+    <img class="avatar" src="https://sf-static.upanhlaylink.com/img/image_2026011673a564000961f8cf3022beab02ffdc1e.jpg" alt="Avatar">
+    <h2>Hi, I am</h2>
+    <h1>𝙃𝙏 𝙄𝙊𝙎ᯓ୨ৎ <img class="verify" src="https://i.imgur.com/McqzSg1.png" alt="verified"></h1>
+    <p><span id="GioiThieu" class="typed-text gradient-text">I am Huu Tien</span></p>
+    <div class="socials">
+      <a href="https://www.tiktok.com/@ht_2590?_r=1&_t=ZS-91exuIBSujn" class="icon" target="_blank">
+        <img src="https://sf-static.upanhlaylink.com/img/image_20251124e1819165be340c639f1f4f61fdcb2b08.jpg" alt="TikTok">
+      </a>
+      <a href="https://www.facebook.com/share/1B4zNoLNwf/?mibextid=wwXIfr" class="icon" target="_blank">
+        <img src="https://sf-static.upanhlaylink.com/img/image_20251123ce8bd083e4eed3ba547ea9ee1ca99014.jpg" alt="Facebook">
+      </a>
+    <a href="https://www.youtube.com/@htios2590" class="icon" target="_blank">
+        <img src="https://sf-static.upanhlaylink.com/img/image_20260120839ac7ba6eaa15108380f14065e9de20.jpg" alt="YouTube">
+      </a>
+       <a href="https://t.me/htiosdev" class="icon" target="_blank">
+        <img src="https://sf-static.upanhlaylink.com/img/image_202601175adaa5d506b9ee0f70f00c02805fbb89.jpg" alt="Telegram">
+      </a>
+      <a href="https://discord.gg/Cnr5Q9c5EM" class="icon" target="_blank">
+        <img src="https://sf-static.upanhlaylink.com/img/image_20260117f1f074277008b035768e549d213c7c73.jpg" alt="Discord">
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== Link cài trực tiếp ===== -->
+  <section class="section">
+    <h2>Link cài trực tiếp </h2>
+   <div class="items">
+ <div class="item">
+    <div class="info">
+        <img src="https://sf-static.upanhlaylink.com/img/image_20260116931fee6a4f31693fd1b760947690ef53.jpg" alt="LQM">
+      </a>
+      <div class="meta">
+        <div class="title">Soon Update! </div>
+        <div class="subtitle">★★★★★ (9.9M)</div>
+      </div>
+    </div>
+    <div class="item-actions">
+      <a href="  " class="action">
+        <i class="bi bi-download"></i>
+      </a>
+    </div>
+  </div>
+     
+    </div>
+  </section>
+
+  <!-- ===== Tải DNS ===== -->
+  <section class="section">
+    <h2>Tải DNS</h2>
+    <div class="items">
+      <div class="item">
+        <div class="info">
+          <img src="https://sf-static.upanhlaylink.com/img/image_20260116931fee6a4f31693fd1b760947690ef53.jpg" alt="DNS Icon">
+          <div class="meta">
+            <div class="title">Soon Update! </div>
+            <div class="subtitle">★★★★★ (8.2M)</div>
+          </div>
+        </div>
+        <div class="item-actions">
+          <a href="  " class="action">
+            <i class="bi bi-download"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Tải FILE Chứng chỉ ===== -->
+  <section class="section">
+    <h2>Tải FILE Chứng chỉ</h2>
+    <div class="items">
+      <div class="item">
+        <div class="info">
+          <img src="https://sf-static.upanhlaylink.com/img/image_20260116931fee6a4f31693fd1b760947690ef53.jpg" alt="Certificate Icon">
+          <div class="meta">
+            <div class="title">Soon Update!</div>
+            <div class="subtitle">★★★★★ (9.1M)</div>
+          </div>
+        </div>
+        <div class="item-actions">
+          <a href="  " class="action">
+            <i class="bi bi-download"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Esign Bypass Revoke ===== -->
+  <section class="section">
+    <h2>Esign Bypass Revoke</h2>
+    <div class="items">
+      <div class="item">
+        <div class="info">
+          <img src="https://sf-static.upanhlaylink.com/img/image_202511239c3c89b67d68c9108f626d76aab44cd5.jpg" alt="Esign Icon">
+          <div class="meta">
+            <div class="title">Soon Update!</div>
+            <div class="subtitle">★★★★★ (9.8M)</div>
+          </div>
+        </div>
+        <div class="item-actions">
+          <a href="  " class="action">
+            <i class="bi bi-download"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Ksign Bypass Revoke ===== -->
+  <section class="section">
+    <h2>Ksign Bypass Revoke</h2>
+    <div class="items">
+      <div class="item">
+        <div class="info">
+          <img src="https://sf-static.upanhlaylink.com/img/image_20251123de304b11effa975dbb99a1e162dde6a7.jpg" alt="Ksign Icon">
+          <div class="meta">
+            <div class="title">Soon Update!</div>
+            <div class="subtitle">★★★★★ (9.7M)</div>
+          </div>
+        </div>
+        <div class="item-actions">
+          <a href=" " class="action">
+            <i class="bi bi-download"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- ===== Footer ===== -->
+  <div class="footer">
+    <p>© 2026 𝙃𝙏 𝙄𝙊𝙎ᯓ୨ৎ</p>
+  </div>
+
+  <!-- ===== Background Music ===== -->
+  <audio id="bgMusic" preload="auto"></audio>
+
+  <!-- ===== Login Modal ===== -->
+  <div id="loginModal" class="login-modal">
+    <div class="login-container">
+      <div class="login-header">
+        <h2><i class="bi bi-shield-lock"></i> Admin Login</h2>
+        <p>Enter your credentials to access admin features</p>
+      </div>
+      <form class="login-form" id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <div class="login-error" id="loginError">Invalid username or password!</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    /* ===== INITIALIZATION ===== */
+    document.addEventListener('DOMContentLoaded', () => {
+      // XÓA TRẠNG THÁI LOGIN KHI TẢI LẠI TRANG
+      localStorage.removeItem('adminLoggedIn');
+      
+      // Remove splash screen
+      const splash = document.getElementById('introSplash');
+      setTimeout(() => {
+        if (splash) splash.style.display = 'none';
+      }, 2500);
+
+      // Initialize Typed.js
+      new Typed('#GioiThieu', {
+        strings: [
+          'I am Huu Tien',
+          "and I'm a Developer",
+          'Besides, I am also the top 1 hacker in Thanh Hoa',
+          'Thank You For Visiting My Website',
+          'Now Explore My Website.'
+        ],
+        typeSpeed: 90,
+        backSpeed: 60,
+        loop: true
+      });
+
+      // Initialize components
+      initMobileMenu();
+      initBackgroundToggle();
+      initAdminLogin();
+      initMusicPlayer();
+      initFlowerEffect();
+    });
+
+    /* ===== MOBILE MENU ===== */
+    function initMobileMenu() {
+      const btn = document.getElementById('menuToggle');
+      const menu = document.getElementById('mobileMenu');
+      const closeBtn = menu.querySelector('.close-btn');
+      const overlay = document.createElement('div');
+      overlay.className = 'menu-overlay';
+      document.body.appendChild(overlay);
+
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        overlay.classList.toggle('active');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        menu.classList.remove('open');
+        overlay.classList.remove('active');
+      });
+
+      overlay.addEventListener('click', () => {
+        menu.classList.remove('open');
+        overlay.classList.remove('active');
+      });
+    }
+
+    /* ===== BACKGROUND TOGGLE ===== */
+    function initBackgroundToggle() {
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = themeToggle.querySelector('i');
+      
+      // Danh sách hình nền
+      const backgrounds = [
+        'https://sf-static.upanhlaylink.com/img/image_20260103a2d9fe225d8e11bbc8bf95137c0ab786.jpg',
+        'https://sf-static.upanhlaylink.com/img/image_202601169293cf9fff47aef8ae8299666aa23843.jpg'
+      ];
+      
+      const backgroundNames = [
+        'Background 1',
+        'Background 2',
+        'Background 3'
+      ];
+      
+      // Lấy background hiện tại từ localStorage hoặc dùng mặc định
+      let currentBgIndex = localStorage.getItem('backgroundIndex') || 0;
+      currentBgIndex = parseInt(currentBgIndex);
+      
+      // Cập nhật biểu tượng
+      updateBackgroundIcon(currentBgIndex, themeIcon);
+      
+      themeToggle.addEventListener('click', () => {
+        // Chuyển sang background tiếp theo
+        currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
+        
+        // Đổi background với hiệu ứng mượt mà
+        document.body.style.backgroundImage = `url('${backgrounds[currentBgIndex]}')`;
+        
+        // Cập nhật icon
+        updateBackgroundIcon(currentBgIndex, themeIcon);
+        
+        // Lưu vào localStorage
+        localStorage.setItem('backgroundIndex', currentBgIndex);
+        
+        // Hiển thị thông báo
+        showBackgroundNotification(`Changed to: ${backgroundNames[currentBgIndex]}`);
+      });
+    }
+    
+    function updateBackgroundIcon(index, iconElement) {
+      // Đổi icon dựa trên background
+      if (index === 0) {
+        iconElement.className = 'bi bi-image';
+      } else {
+        iconElement.className = 'bi bi-image-alt';
+      }
+    }
+    
+    function showBackgroundNotification(message) {
+      const notification = document.createElement('div');
+      notification.className = 'background-notification';
+      notification.innerHTML = `
+        <div class="notification-content">
+          <i class="bi bi-image"></i>
+          <span>${message}</span>
+        </div>
+      `;
+      document.body.appendChild(notification);
+      
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+          if (notification.parentNode) notification.remove();
+        }, 500);
+      }, 2000);
+    }
+
+    /* ===== ADMIN LOGIN/LOGOUT ===== */
+    function initAdminLogin() {
+      const adminToggle = document.getElementById('adminToggle');
+      const logoutBtn = document.getElementById('logoutBtn');
+      const loginModal = document.getElementById('loginModal');
+      const loginForm = document.getElementById('loginForm');
+      const loginError = document.getElementById('loginError');
+
+      // Kiểm tra nếu đã login (mặc định không, vì đã xóa khi load trang)
+      let isLoggedIn = false;
+
+      // Cập nhật UI dựa trên trạng thái login
+      function updateLoginUI() {
+        const adminDownloadBtns = document.querySelectorAll('.admin-action');
+        
+        if (isLoggedIn) {
+          // Hiện nút logout và TẤT CẢ nút admin download
+          logoutBtn.classList.add('show');
+          adminDownloadBtns.forEach(btn => {
+            btn.classList.add('show');
+          });
+          // Đổi icon admin button
+          adminToggle.innerHTML = '<i class="bi bi-person-check-fill"></i>';
+        } else {
+          // Ẩn nút logout và TẤT CẢ nút admin download
+          logoutBtn.classList.remove('show');
+          adminDownloadBtns.forEach(btn => {
+            btn.classList.remove('show');
+          });
+          // Đổi lại icon admin button
+          adminToggle.innerHTML = '<i class="bi bi-person-fill"></i>';
+        }
+      }
+
+      // Khởi tạo UI (mặc định logout)
+      updateLoginUI();
+
+      // Mở modal login
+      adminToggle.addEventListener('click', () => {
+        if (!isLoggedIn) {
+          loginModal.classList.add('show');
+        }
+      });
+
+      // Đóng modal khi click bên ngoài
+      loginModal.addEventListener('click', (e) => {
+        if (e.target === loginModal) {
+          loginModal.classList.remove('show');
+          loginError.style.display = 'none';
+        }
+      });
+
+      // Xử lý login
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Kiểm tra thông tin đăng nhập
+        if (username === 'htios2590' && password === '123') {
+          // Login thành công
+          loginError.style.display = 'none';
+          loginModal.classList.remove('show');
+          
+          // Đặt trạng thái login
+          isLoggedIn = true;
+          
+          // Cập nhật UI - HIỆN TẤT CẢ NÚT ADMIN
+          updateLoginUI();
+          
+          // Lưu trạng thái login (mặc dù sẽ bị xóa khi reload)
+          localStorage.setItem('adminLoggedIn', 'true');
+          
+          // Xóa thông tin đăng nhập trong form
+          document.getElementById('username').value = '';
+          document.getElementById('password').value = '';
+          
+          // Hiển thị thông báo thành công
+          showNotification('Login successful! Admin features unlocked.', 'success');
+        } else {
+          // Login thất bại
+          loginError.style.display = 'block';
+        }
+      });
+
+      // Xử lý logout
+      logoutBtn.addEventListener('click', () => {
+        // Đặt trạng thái logout
+        isLoggedIn = false;
+        
+        // Cập nhật UI - ẨN TẤT CẢ NÚT ADMIN
+        updateLoginUI();
+        
+        // Xóa trạng thái login từ localStorage
+        localStorage.removeItem('adminLoggedIn');
+        
+        // Hiển thị thông báo logout
+        showNotification('Logged out successfully.', 'info');
+      });
+    }
+
+    /* ===== MUSIC PLAYER ===== */
+    const playlist = [
+      'https://files.catbox.moe/cre1ul.mp3', 
+      'https://files.catbox.moe/gfribu.mp3',
+      'https://files.catbox.moe/lyypw1.mp3'
+    ];
+
+    const songNames = [
+      'Mưa Đợi Chờ Remix', 
+      'Em Nào Có Tội Remix',
+      'Sao Mình Chưa Nắm Tay Nhau Remix'
+    ];
+
+    const audio = document.getElementById('bgMusic');
+    let currentSongIndex = 0;
+
+    function initMusicPlayer() {
+      createMusicControls();
+      createSongList();
+      createSongNotification();
+      playCurrentSong();
+      
+      // Auto play after 1 second
+      setTimeout(() => {
+        autoPlayMusic();
+      }, 1000);
+
+      audio.addEventListener('ended', playNextSong);
+    }
+
+    function createMusicControls() {
+      const controls = document.createElement('div');
+      controls.className = 'music-controls';
+      controls.innerHTML = `
+        <button class="music-btn" onclick="playPreviousSong()" title="Bài trước">
+          <i class="bi bi-skip-backward-fill"></i>
+        </button>
+        <button class="music-btn" onclick="togglePlayPause()" title="Phát/Tạm dừng">
+          <i class="bi bi-play-fill" id="playIcon"></i>
+          <i class="bi bi-pause-fill" id="pauseIcon" style="display:none"></i>
+        </button>
+        <button class="music-btn" onclick="playNextSong()" title="Bài tiếp theo">
+          <i class="bi bi-skip-forward-fill"></i>
+        </button>
+        <button class="music-btn select-btn" onclick="openSongList()" title="Chọn bài hát">
+          <i class="bi bi-music-note-list"></i>
+        </button>
+      `;
+      document.body.appendChild(controls);
+    }
+
+    function createSongList() {
+      const songList = document.createElement('div');
+      songList.className = 'song-list-panel';
+      songList.innerHTML = `
+        <div class="song-list-header">
+          <span>Chọn bài hát</span>
+          <button class="close-list-btn" onclick="closeSongList()">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+        <div class="song-list-content">
+          ${songNames.map((song, index) => `
+            <div class="song-list-item ${index === currentSongIndex ? 'active' : ''}" 
+                 onclick="selectSong(${index})">
+              <i class="bi bi-music-note"></i>
+              <span>${song}</span>
+              ${index === currentSongIndex ? '<i class="bi bi-check"></i>' : ''}
+            </div>
+          `).join('')}
+        </div>
+      `;
+      document.body.appendChild(songList);
+    }
+
+    function createSongNotification() {
+      const notification = document.createElement('div');
+      notification.className = 'song-notification';
+      notification.innerHTML = `
+        <div class="notification-content">
+          <i class="bi bi-music-note-beamed"></i>
+          <span id="currentSongText">Đang phát: ${songNames[0]}</span>
+        </div>
+      `;
+      document.body.appendChild(notification);
+    }
+
+    function playCurrentSong() {
+      audio.src = playlist[currentSongIndex];
+      audio.volume = 0.7;
+      audio.load();
+      
+      // Update active song in list
+      document.querySelectorAll('.song-list-item').forEach((item, index) => {
+        item.classList.toggle('active', index === currentSongIndex);
+      });
+    }
+
+    function playNextSong() {
+      currentSongIndex = (currentSongIndex + 1) % playlist.length;
+      playCurrentSong();
+      audio.play();
+      updateMusicIcons('play');
+      showSongNotification();
+    }
+
+    function playPreviousSong() {
+      currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+      playCurrentSong();
+      audio.play();
+      updateMusicIcons('play');
+      showSongNotification();
+    }
+
+    function togglePlayPause() {
+      if (audio.paused) {
+        audio.play();
+        updateMusicIcons('play');
+      } else {
+        audio.pause();
+        updateMusicIcons('pause');
+      }
+    }
+
+    function updateMusicIcons(state) {
+      const playIcon = document.getElementById('playIcon');
+      const pauseIcon = document.getElementById('pauseIcon');
+      
+      if (state === 'play') {
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+      } else {
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+      }
+    }
+
+    function openSongList() {
+      document.querySelector('.song-list-panel').classList.add('show');
+    }
+
+    function closeSongList() {
+      document.querySelector('.song-list-panel').classList.remove('show');
+    }
+
+    function selectSong(index) {
+      currentSongIndex = index;
+      playCurrentSong();
+      
+      audio.play().then(() => {
+        updateMusicIcons('play');
+        showSongNotification();
+        closeSongList();
+      }).catch(error => {
+        console.log('Không thể phát nhạc:', error);
+        updateMusicIcons('pause');
+        showSongNotification();
+        closeSongList();
+      });
+    }
+
+    function showSongNotification() {
+      const notification = document.querySelector('.song-notification');
+      const songText = document.getElementById('currentSongText');
+      
+      songText.textContent = `Đang phát: ${songNames[currentSongIndex]}`;
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+
+    function autoPlayMusic() {
+      audio.load();
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log('Nhạc tự động phát thành công');
+          updateMusicIcons('play');
+          showSongNotification();
+        }).catch(error => {
+          console.log('Tự động phát bị chặn, đang chờ tương tác người dùng');
+          showInteractionNotification();
+          document.body.addEventListener('click', enableAudioOnInteraction, { once: true });
+        });
+      }
+    }
+
+    function showInteractionNotification() {
+      const notification = document.createElement('div');
+      notification.className = 'interaction-notification';
+      notification.innerHTML = `
+        <div class="notification-content">
+          <i class="bi bi-music-note-beamed"></i>
+          <span>Nhấn vào trang để bật nhạc</span>
+        </div>
+      `;
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        if (notification.parentNode) notification.remove();
+      }, 5000);
+    }
+
+    function enableAudioOnInteraction() {
+      const interactionNotification = document.querySelector('.interaction-notification');
+      if (interactionNotification) interactionNotification.remove();
+      
+      audio.play().then(() => {
+        console.log('Nhạc đã được bật sau tương tác người dùng');
+        updateMusicIcons('play');
+        showSongNotification();
+      }).catch(error => {
+        console.log('Vẫn không thể phát nhạc:', error);
+      });
+    }
+
+    /* ===== FLOWER EFFECT ===== */
+    function initFlowerEffect() {
+      const flowers = ['⚡️', '🌸', '🌷'];
+      let flowerInterval = null;
+      
+      function createFlower() {
+        const flower = document.createElement('div');
+        flower.className = 'flower';
+        flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        flower.style.fontSize = (Math.random() * 20 + 20) + 'px';
+        document.body.appendChild(flower);
+
+        setTimeout(() => flower.remove(), 8000);
+      }
+
+      function startFlowers() {
+        if (!flowerInterval) {
+          flowerInterval = setInterval(createFlower, 300);
+          flowerToggle.classList.remove('off');
+          flowerToggle.innerHTML = '💕';
+        }
+      }
+
+      function stopFlowers() {
+        if (flowerInterval) {
+          clearInterval(flowerInterval);
+          flowerInterval = null;
+          flowerToggle.classList.add('off');
+          flowerToggle.innerHTML = '❌';
+        }
+      }
+
+      function toggleFlowers() {
+        if (flowerInterval) {
+          stopFlowers();
+        } else {
+          startFlowers();
+        }
+      }
+
+      // Create toggle button
+      const flowerToggle = document.createElement('button');
+      flowerToggle.className = 'flower-toggle';
+      flowerToggle.innerHTML = '🌸';
+      flowerToggle.title = 'Bật/Tắt hiệu ứng hoa rơi';
+      document.body.appendChild(flowerToggle);
+
+      flowerToggle.addEventListener('click', toggleFlowers);
+      startFlowers();
+    }
+
+    /* ===== NOTIFICATION FUNCTION ===== */
+    function showNotification(message, type = 'info') {
+      const notification = document.createElement('div');
+      notification.className = 'song-notification';
+      notification.innerHTML = `
+        <div class="notification-content">
+          <i class="bi bi-${type === 'success' ? 'check-circle' : type === 'info' ? 'info-circle' : 'exclamation-circle'}"></i>
+          <span>${message}</span>
+        </div>
+      `;
+      document.body.appendChild(notification);
+      
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+          if (notification.parentNode) notification.remove();
+        }, 500);
+      }, 3000);
+    }
+
+    // Global functions
+    window.playPreviousSong = playPreviousSong;
+    window.playNextSong = playNextSong;
+    window.togglePlayPause = togglePlayPause;
+    window.openSongList = openSongList;
+    window.closeSongList = closeSongList;
+    window.selectSong = selectSong;
+  </script>
+</body>
+</html>
